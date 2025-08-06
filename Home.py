@@ -5,7 +5,6 @@ st.header("SkillGap Radar 🎯")
 
 st.title("🧠 About This Project it is an AI Resume Analyzer")
 
-apply_custom_button_style()
 
 about_text = """
 Welcome to **SkillGap Radar 🎯**, your intelligent career companion designed to transform the way you build and evaluate resumes. Whether you're a student, a job seeker, or a working professional, this tool helps you understand how your resume aligns with your dream job — and what you're missing.
@@ -35,4 +34,5 @@ with col1:
 
 with col2:
     pass
+
 
