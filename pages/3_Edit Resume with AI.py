@@ -5,14 +5,10 @@ from groq import Groq
 from fpdf import FPDF
 import tempfile
 import base64
-from utils.css import apply_custom_button_style
 
 # load environment variables
 load_dotenv()
 api_key = os.getenv("GROQ_API_KEY")
-
-# load custome css 
-apply_custom_button_style()
 
 # Ensure resume exists
 if "resume" not in st.session_state or not st.session_state.resume:
@@ -99,3 +95,4 @@ if st.button("📥 Download Edited Resume as PDF"):
             base64_pdf = base64.b64encode(f.read()).decode("utf-8")
             download_link = f'<a href="data:application/pdf;base64,{base64_pdf}" download="Edited_Resume.pdf">📥 Click to Download Edited Resume</a>'
             st.markdown(download_link, unsafe_allow_html=True)
+
