@@ -1,5 +1,4 @@
 import streamlit as st
-from utils.css import apply_custom_button_style
 
 
 st.header("SkillGap Radar 🎯")
@@ -36,3 +35,4 @@ with col1:
 
 with col2:
     pass
+
