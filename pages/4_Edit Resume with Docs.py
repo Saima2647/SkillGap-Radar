@@ -21,7 +21,7 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # --- Google OAuth 2.0 Client ID Setup ---
 # This file contains your client_id, client_secret, etc.
-CLIENT_SECRETS_FILE = "your folder and json file"
+CLIENT_SECRETS_FILE = "credential and your json file"
 
 # This is where the user access and refresh tokens will be stored.
 # This file will be created automatically after the first successful authentication.
@@ -168,6 +168,7 @@ if document_id:
     st.markdown(f"### [📝 Click here to Edit Your Resume in Google Docs]({doc_url})", unsafe_allow_html=True)
 else:
     st.error("Could not generate a link as document creation failed.")
+
 
 
 
