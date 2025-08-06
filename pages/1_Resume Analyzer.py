@@ -10,14 +10,14 @@ import urllib.parse as ul # used to manuplate url
 import tempfile # create a temporary file for pdf
 import base64 # converts file into binary for downloading and putting html buttons 
 from fpdf import FPDF # genrate pdf
-from utils.css import apply_custom_button_style # custome css file 
+
 
 load_dotenv() # load environment
 api_key = os.getenv("GROQ_API_KEY") # fetch API key
 
 #This block makes sure that these variables exist in Streamlit memory before we use them, 
 #so we can avoid errors and keep user inputs saved across interactions.
-apply_custom_button_style()
+
 for key in ["form_submitted", "resume", "job_desc"]:
     if key not in st.session_state:
         st.session_state[key] = ""
@@ -201,5 +201,6 @@ if st.session_state.form_submitted:
 
 
     
+
 
 # <-------------- End of the Work Flow --------------->
