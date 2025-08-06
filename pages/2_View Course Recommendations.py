@@ -1,5 +1,3 @@
-# pages/2_Course.py
-
 import os, urllib.parse as ul
 import streamlit as st
 from dotenv import load_dotenv
@@ -78,3 +76,4 @@ for skill in skills[:5]:  # Show top 5 skills
         st.markdown("_❌ No YouTube videos found for this skill._")
 
 # End of File
+
