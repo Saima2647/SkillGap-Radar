@@ -49,6 +49,7 @@ def calculate_similarity_bert(text1, text2):
     #Job description	→ SentenceTransformer	→ Embedding Vector B
     #A & B → cosine_similarity	→ Score (0.0–1.0)	e.g. 0.83
     similarity = cosine_similarity(embeddings1, embeddings2)[0][0]
+    similarity = similarity*100
     return similarity
 
 # sends resume and jd to the ai to genrate the report 
@@ -144,7 +145,7 @@ if st.session_state.form_submitted:
 
     col1,col2 = st.columns(2,border=True)
     with col1:
-        st.write("Few ATS uses this score to shortlist candidates, Similarity Score:")
+        st.write("ATS Score:")
         st.subheader(str(ats_score))
 
     # Call the function to get the Analysis Report from LLM (Groq)
@@ -153,7 +154,7 @@ if st.session_state.form_submitted:
 
     # Calculate the Average Score from the LLM Report
     report_scores = extract_scores(report)                 # Example : [3/5, 4/5, 5/5,...]
-    avg_score = sum(report_scores) / (5*len(report_scores))  # Example: 2.4
+    avg_score = (sum(report_scores) / (5*len(report_scores)))*100  # Example: 2.4
 
 
     with col2:
@@ -204,3 +205,4 @@ if st.session_state.form_submitted:
 
 
 # <-------------- End of the Work Flow --------------->
+
